@@ -8,5 +8,16 @@ namespace AS2324_5G_INF_LombardiGuglielmo_WebAPI_1_.Controllers
         {
             return View();
         }
+
+        [HttpGet("celsius_to_fahrenheit")]
+        public JsonResult celsius_to_fahrenheit(double celsius)
+        {
+
+                double fahrenheit = ((9 / 5) * celsius) + 32;
+                return Json(new { output = $"La temperatura celsius inserita ({celsius}), convertita in  fahrenheit, risulta essere : ({fahrenheit})", status = "OK" });
+            
+
+
+        }
     }
 }
